@@ -1,7 +1,8 @@
 <?php
-	session_start();
 
 	include 'db_connection.php';
+	
+	session_start();
 	
 	$post = $_SERVER['REQUEST_METHOD']=='POST';
 
