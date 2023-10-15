@@ -10,21 +10,23 @@
 			empty($_POST['pass'])
 		) $empty_fields = true;
 
-		else {
-				$st = $pdo->prepare('SELECT * FROM users WHERE user_name=?');
-				$st->execute(array($_POST['uname']));
-				$r=$st->fetch();
-				if($r != null && $r["password"]==$_POST['pass']) {
-					echo $_POST["uname"];
-					echo $_POST["pass"];
-					$_SESSION["uname"] = $_POST["uname"];
-					$_SESSION["pass"] = $_POST["pass"];
-					$_SESSION["fname"] = $r["first_name"];
-					echo $_SESSION["uname"];
-					echo $_SESSION["pass"];
-					header("Location:success.php");
-					exit;
-				} else $login_err = true;
+		else
+		{
+			$st = $pdo->prepare('SELECT * FROM users WHERE user_name=?');
+			$st->execute(array($_POST['uname']));
+			$r=$st->fetch();
+			if($r != null && $r["password"]==$_POST['pass'])
+			{
+				echo $_POST["uname"];
+				echo $_POST["pass"];
+				$_SESSION["uname"] = $_POST["uname"];
+				$_SESSION["pass"] = $_POST["pass"];
+				$_SESSION["fname"] = $r["first_name"];
+				echo $_SESSION["uname"];
+				echo $_SESSION["pass"];
+				header("Location:success.php");
+				exit;
+			} else $login_err = true;
 		}
 	}
 ?>
@@ -39,7 +41,8 @@
 		font-family: sans-serif;
 		font-size:.9em;
 	}
-	div {
+	div
+	{
 		top:50%;
 		left:50%;
 		transform: translate(-50%,-50%);
@@ -49,12 +52,13 @@
 		position:absolute;
 		width:350px;
 		background:#eee;
-		padding:10px 20px;
-		border-radius: 2px;
+		/* padding:10px 20px;
+		border-radius: 2px; */
 		box-shadow:0px 0px 10px #aaa;
 		box-sizing:border-box;
 	}
-	input {
+	input
+	{
 		display: inline-block;
 		border: none;
 		width:100%;
@@ -64,7 +68,8 @@
 		box-sizing: border-box;
 		box-shadow: 0px 0px 2px #ccc;
 	}
-	#submit {
+	#submit
+	{
 		border:none;
 		background-color: blue;
 		color:white;

@@ -23,8 +23,7 @@
 CREATE TABLE users(
 	id int not null auto_increment,
 	user_name varchar(255) not null,
-	first_name varchar(255) not null,
-	last_name varchar(255) not null,
+	full_name varchar(255) not null,
 	email varchar(255) not null,
 	password varchar(255) not null,
 	PRIMARY KEY (id)

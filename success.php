@@ -62,7 +62,7 @@
 <body>
 <div>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-	<p><?php echo $_SESSION["fname"] ?>, bem vindo à página de atividades do professor Danilo.</p><br>
+	<p><?php echo $_SESSION["full_name"] ?>, bem vindo à página de atividades do professor Danilo.</p><br>
 	<p>Você esta logado como <?php echo $_SESSION["uname"];?>.</p><br><br>
 	<input type="submit" id="submit" name="submit" value="Sair">
 </form>
